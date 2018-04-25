@@ -1,0 +1,102 @@
+entity Specialite {
+    libelle String
+}
+
+entity Role {
+	id Integer,
+    libelle String
+}
+
+entity Utilisateur {
+  nom String
+  prenom String
+  mail String
+  telephone String
+}
+
+entity Promotion {
+    date_debut Instant
+    date_fin Instant
+}
+
+entity Secteur {
+    nom String required
+}
+
+entity Tag {
+    nom String required
+}
+
+entity Memoire {
+    nom String required
+    sujet String required
+    langue Langue required
+    confidentiel Boolean
+}
+
+enum Langue {
+	FRANCAIS, ANGLAIS
+}
+
+relationship OneToOne {
+	Utilisateur{secteur} to Secteur
+}
+
+relationship OneToMany {
+	Promotion{utilisateurs} to Utilisateur
+}
+
+relationship OneToOne {
+	Utilisateur{promotion} to Promotion
+}
+
+relationship OneToOne {
+	Promotion{specialite} to Specialite
+}
+
+relationship OneToMany {
+	Secteur{specialite} to Specialite
+}
+
+relationship OneToOne {
+	Specialite{secteurs} to Secteur
+}
+
+relationship OneToOne {
+	Secteur{tag} to Tag
+}
+
+relationship OneToMany {
+	Tag{secteurs} to Secteur
+}
+
+relationship OneToOne {
+	Utilisateur{secteur} to Secteur
+}
+
+relationship OneToMany {
+	Secteur{utilisateurs} to Utilisateur
+}
+
+relationship ManyToMany {
+	Memoire{tags} to Tag
+}
+
+relationship ManyToMany {
+	Tag{memoires} to Memoire
+}
+
+relationship OneToOne {
+	Utilisateur{roles} to Role
+}
+relationship OneToMany {
+	Role{utilisateurs} to Utilisateur
+}
+
+
+
+// Set pagination options
+paginate Memoire with infinite-scroll
+
+dto * with mapstruct
+
