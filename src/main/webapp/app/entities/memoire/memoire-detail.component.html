@@ -1,0 +1,44 @@
+
+<div *ngIf="memoire">
+    <h2><span>Memoire</span> {{memoire.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Nom</span></dt>
+        <dd>
+            <span>{{memoire.nom}}</span>
+        </dd>
+        <dt><span>Sujet</span></dt>
+        <dd>
+            <span>{{memoire.sujet}}</span>
+        </dd>
+        <dt><span>Langue</span></dt>
+        <dd>
+            <span>{{memoire.langue}}</span>
+        </dd>
+        <dt><span>Confidentiel</span></dt>
+        <dd>
+            <span>{{memoire.confidentiel}}</span>
+        </dd>
+        <dt><span>Tags</span></dt>
+        <dd>
+            <span *ngFor="let tags of memoire.tags; let last = last">
+                <a [routerLink]="['/tag', tags?.id ]">{{tags.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'memoire/'+ memoire.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "specialite",
+            "otherEntityName": "specialite",
+            "otherEntityRelationshipName": "secteur"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "utilisateurs",
+            "otherEntityName": "userExtra",
+            "otherEntityRelationshipName": "secteur"
+        },
+        {
+            "relationshipName": "tag",
+            "otherEntityName": "tag",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180425084754",
+    "entityTableName": "secteur",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

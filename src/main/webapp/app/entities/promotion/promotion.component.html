@@ -1,0 +1,66 @@
+<div>
+    <h2>
+        <span>Promotions</span>
+        <button class="btn btn-primary float-right jh-create-entity create-promotion" [routerLink]="['/', { outlets: { popup: ['promotion-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new Promotion
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="promotions">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Datedebut</span></th>
+            <th><span>Datefin</span></th>
+            <th><span>Specialite</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let promotion of promotions ;trackBy: trackId">
+                <td><a [routerLink]="['../promotion', promotion.id ]">{{promotion.id}}</a></td>
+                <td>{{promotion.datedebut | date:'medium'}}</td>
+                <td>{{promotion.datefin | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="promotion.specialiteId">
+                        <a [routerLink]="['../specialite', promotion.specialiteId  ]" >{{promotion.specialiteId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../promotion', promotion.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'promotion/'+ promotion.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'promotion/'+ promotion.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

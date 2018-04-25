@@ -2,16 +2,7 @@ entity Specialite {
     libelle String
 }
 
-entity Role {
-	id Integer,
-    libelle String
-}
-
-entity Utilisateur {
-  nom String
-  prenom String
-  mail String
-  telephone String
+entity UserExtra {
 }
 
 entity Promotion {
@@ -38,44 +29,24 @@ enum Langue {
 	FRANCAIS, ANGLAIS
 }
 
-relationship OneToOne {
-	Utilisateur{secteur} to Secteur
+relationship OneToMany {
+	Promotion{utilisateurs} to UserExtra
 }
 
 relationship OneToMany {
-	Promotion{utilisateurs} to Utilisateur
-}
-
-relationship OneToOne {
-	Utilisateur{promotion} to Promotion
-}
-
-relationship OneToOne {
-	Promotion{specialite} to Specialite
+	Specialite{specialite} to Promotion
 }
 
 relationship OneToMany {
 	Secteur{specialite} to Specialite
 }
 
-relationship OneToOne {
-	Specialite{secteurs} to Secteur
-}
-
-relationship OneToOne {
-	Secteur{tag} to Tag
-}
-
 relationship OneToMany {
 	Tag{secteurs} to Secteur
 }
 
-relationship OneToOne {
-	Utilisateur{secteur} to Secteur
-}
-
 relationship OneToMany {
-	Secteur{utilisateurs} to Utilisateur
+	Secteur{utilisateurs} to UserExtra
 }
 
 relationship ManyToMany {
@@ -84,13 +55,6 @@ relationship ManyToMany {
 
 relationship ManyToMany {
 	Tag{memoires} to Memoire
-}
-
-relationship OneToOne {
-	Utilisateur{roles} to Role
-}
-relationship OneToMany {
-	Role{utilisateurs} to Utilisateur
 }
 
 

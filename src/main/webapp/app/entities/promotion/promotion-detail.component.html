@@ -1,0 +1,36 @@
+
+<div *ngIf="promotion">
+    <h2><span>Promotion</span> {{promotion.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Datedebut</span></dt>
+        <dd>
+            <span>{{promotion.datedebut | date:'medium'}}</span>
+        </dd>
+        <dt><span>Datefin</span></dt>
+        <dd>
+            <span>{{promotion.datefin | date:'medium'}}</span>
+        </dd>
+        <dt><span>Specialite</span></dt>
+        <dd>
+            <div *ngIf="promotion.specialiteId">
+                <a [routerLink]="['/specialite', promotion.specialiteId]">{{promotion.specialiteId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'promotion/'+ promotion.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

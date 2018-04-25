@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "specialite",
+            "otherEntityName": "specialite",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "utilisateurs",
+            "otherEntityName": "userExtra",
+            "otherEntityRelationshipName": "promotion"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "datedebut",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "datefin",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20180425084753",
+    "entityTableName": "promotion",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

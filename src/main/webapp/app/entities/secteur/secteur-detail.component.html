@@ -1,0 +1,32 @@
+
+<div *ngIf="secteur">
+    <h2><span>Secteur</span> {{secteur.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Nom</span></dt>
+        <dd>
+            <span>{{secteur.nom}}</span>
+        </dd>
+        <dt><span>Tag</span></dt>
+        <dd>
+            <div *ngIf="secteur.tagId">
+                <a [routerLink]="['/tag', secteur.tagId]">{{secteur.tagId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'secteur/'+ secteur.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

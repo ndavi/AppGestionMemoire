@@ -1,0 +1,46 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPromotionLabel">Create or edit a Promotion</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!promotion.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="promotion.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_datedebut">Datedebut</label>
+            <div class="d-flex">
+                <input id="field_datedebut" type="datetime-local" class="form-control" name="datedebut" [(ngModel)]="promotion.datedebut"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_datefin">Datefin</label>
+            <div class="d-flex">
+                <input id="field_datefin" type="datetime-local" class="form-control" name="datefin" [(ngModel)]="promotion.datefin"
+                />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="field_specialite">Specialite</label>
+            <select class="form-control" id="field_specialite" name="specialite" [(ngModel)]="promotion.specialiteId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="specialiteOption.id" *ngFor="let specialiteOption of specialites; trackBy: trackSpecialiteById">{{specialiteOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
