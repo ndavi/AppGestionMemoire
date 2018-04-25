@@ -8,6 +8,7 @@ import fr.sciencesu.memoire.service.dto.TagDTO;
 import fr.sciencesu.memoire.service.mapper.TagMapper;
 import fr.sciencesu.memoire.web.rest.errors.ExceptionTranslator;
 
+import fr.sciencesu.memoire.web.rest.jhipster.TagResource;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

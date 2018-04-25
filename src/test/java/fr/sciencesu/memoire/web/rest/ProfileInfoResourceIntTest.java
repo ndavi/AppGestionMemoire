@@ -1,5 +1,6 @@
 package fr.sciencesu.memoire.web.rest;
 
+import fr.sciencesu.memoire.web.rest.jhipster.ProfileInfoResource;
 import io.github.jhipster.config.JHipsterProperties;
 import fr.sciencesu.memoire.AppGestionMemoireApp;
 import org.junit.Before;

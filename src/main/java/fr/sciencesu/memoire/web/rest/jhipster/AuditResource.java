@@ -1,4 +1,4 @@
-package fr.sciencesu.memoire.web.rest;
+package fr.sciencesu.memoire.web.rest.jhipster;
 
 import fr.sciencesu.memoire.service.AuditEventService;
 import fr.sciencesu.memoire.web.rest.util.PaginationUtil;

@@ -5,6 +5,7 @@ import fr.sciencesu.memoire.config.audit.AuditEventConverter;
 import fr.sciencesu.memoire.domain.PersistentAuditEvent;
 import fr.sciencesu.memoire.repository.PersistenceAuditEventRepository;
 import fr.sciencesu.memoire.service.AuditEventService;
+import fr.sciencesu.memoire.web.rest.jhipster.AuditResource;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +22,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
-import java.time.format.DateTimeFormatter;
 
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

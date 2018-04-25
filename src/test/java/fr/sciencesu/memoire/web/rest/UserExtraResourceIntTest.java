@@ -8,6 +8,7 @@ import fr.sciencesu.memoire.service.dto.UserExtraDTO;
 import fr.sciencesu.memoire.service.mapper.UserExtraMapper;
 import fr.sciencesu.memoire.web.rest.errors.ExceptionTranslator;
 
+import fr.sciencesu.memoire.web.rest.jhipster.UserExtraResource;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

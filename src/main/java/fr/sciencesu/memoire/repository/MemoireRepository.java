@@ -19,4 +19,6 @@ public interface MemoireRepository extends JpaRepository<Memoire, Long> {
     @Query("select memoire from Memoire memoire left join fetch memoire.tags where memoire.id =:id")
     Memoire findOneWithEagerRelationships(@Param("id") Long id);
 
+    List<Memoire> findByConfidentielFalse();
+
 }

@@ -1,7 +1,6 @@
 package fr.sciencesu.memoire.web.rest;
 
 import fr.sciencesu.memoire.AppGestionMemoireApp;
-import fr.sciencesu.memoire.config.CacheConfiguration;
 import fr.sciencesu.memoire.domain.Authority;
 import fr.sciencesu.memoire.domain.User;
 import fr.sciencesu.memoire.repository.UserRepository;
@@ -11,6 +10,7 @@ import fr.sciencesu.memoire.service.UserService;
 import fr.sciencesu.memoire.service.dto.UserDTO;
 import fr.sciencesu.memoire.service.mapper.UserMapper;
 import fr.sciencesu.memoire.web.rest.errors.ExceptionTranslator;
+import fr.sciencesu.memoire.web.rest.jhipster.UserResource;
 import fr.sciencesu.memoire.web.rest.vm.ManagedUserVM;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;

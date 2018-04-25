@@ -8,6 +8,7 @@ import fr.sciencesu.memoire.service.dto.PromotionDTO;
 import fr.sciencesu.memoire.service.mapper.PromotionMapper;
 import fr.sciencesu.memoire.web.rest.errors.ExceptionTranslator;
 
+import fr.sciencesu.memoire.web.rest.jhipster.PromotionResource;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

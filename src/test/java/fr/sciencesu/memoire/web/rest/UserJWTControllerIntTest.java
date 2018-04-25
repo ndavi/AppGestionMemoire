@@ -4,6 +4,7 @@ import fr.sciencesu.memoire.AppGestionMemoireApp;
 import fr.sciencesu.memoire.domain.User;
 import fr.sciencesu.memoire.repository.UserRepository;
 import fr.sciencesu.memoire.security.jwt.TokenProvider;
+import fr.sciencesu.memoire.web.rest.jhipster.UserJWTController;
 import fr.sciencesu.memoire.web.rest.vm.LoginVM;
 import fr.sciencesu.memoire.web.rest.errors.ExceptionTranslator;
 import org.junit.Before;

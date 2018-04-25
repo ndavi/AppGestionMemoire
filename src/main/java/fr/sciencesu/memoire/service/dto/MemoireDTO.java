@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
 import fr.sciencesu.memoire.domain.enumeration.Langue;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * A DTO for the Memoire entity.
@@ -25,6 +26,10 @@ public class MemoireDTO implements Serializable {
     private Langue langue;
 
     private Boolean confidentiel;
+
+    private MultipartFile data;
+
+    private String dataPath;
 
     private Set<TagDTO> tags = new HashSet<>();
 
@@ -74,6 +79,22 @@ public class MemoireDTO implements Serializable {
 
     public void setTags(Set<TagDTO> tags) {
         this.tags = tags;
+    }
+
+    public String getDataPath() {
+        return dataPath;
+    }
+
+    public void setDataPath(String dataPath) {
+        this.dataPath = dataPath;
+    }
+
+    public MultipartFile getData() {
+        return data;
+    }
+
+    public void setData(MultipartFile data) {
+        this.data = data;
     }
 
     @Override

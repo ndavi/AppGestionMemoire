@@ -8,6 +8,7 @@ import fr.sciencesu.memoire.service.dto.MemoireDTO;
 import fr.sciencesu.memoire.service.mapper.MemoireMapper;
 import fr.sciencesu.memoire.web.rest.errors.ExceptionTranslator;
 
+import fr.sciencesu.memoire.web.rest.jhipster.MemoireResource;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

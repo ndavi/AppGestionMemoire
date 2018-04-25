@@ -1,4 +1,4 @@
-package fr.sciencesu.memoire.web.rest;
+package fr.sciencesu.memoire.web.rest.jhipster;
 
 import fr.sciencesu.memoire.config.Constants;
 import com.codahale.metrics.annotation.Timed;

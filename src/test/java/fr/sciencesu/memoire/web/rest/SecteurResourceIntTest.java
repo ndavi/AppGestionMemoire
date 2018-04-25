@@ -8,6 +8,7 @@ import fr.sciencesu.memoire.service.dto.SecteurDTO;
 import fr.sciencesu.memoire.service.mapper.SecteurMapper;
 import fr.sciencesu.memoire.web.rest.errors.ExceptionTranslator;
 
+import fr.sciencesu.memoire.web.rest.jhipster.SecteurResource;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

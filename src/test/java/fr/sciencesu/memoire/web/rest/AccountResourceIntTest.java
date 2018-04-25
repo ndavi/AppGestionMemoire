@@ -10,6 +10,7 @@ import fr.sciencesu.memoire.security.AuthoritiesConstants;
 import fr.sciencesu.memoire.service.MailService;
 import fr.sciencesu.memoire.service.dto.UserDTO;
 import fr.sciencesu.memoire.web.rest.errors.ExceptionTranslator;
+import fr.sciencesu.memoire.web.rest.jhipster.AccountResource;
 import fr.sciencesu.memoire.web.rest.vm.KeyAndPasswordVM;
 import fr.sciencesu.memoire.web.rest.vm.ManagedUserVM;
 import fr.sciencesu.memoire.service.UserService;
@@ -31,7 +32,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import java.time.Instant;
-import java.time.LocalDate;
 
 import java.util.*;
 

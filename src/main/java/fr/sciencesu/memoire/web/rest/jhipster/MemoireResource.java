@@ -1,4 +1,4 @@
-package fr.sciencesu.memoire.web.rest;
+package fr.sciencesu.memoire.web.rest.jhipster;
 
 import com.codahale.metrics.annotation.Timed;
 import fr.sciencesu.memoire.domain.Memoire;
@@ -37,8 +37,8 @@ public class MemoireResource {
 
     private static final String ENTITY_NAME = "memoire";
 
-    private final MemoireRepository memoireRepository;
 
+    private final MemoireRepository memoireRepository;
     private final MemoireMapper memoireMapper;
 
     public MemoireResource(MemoireRepository memoireRepository, MemoireMapper memoireMapper) {

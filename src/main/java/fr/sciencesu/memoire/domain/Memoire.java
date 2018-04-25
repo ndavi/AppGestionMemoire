@@ -40,6 +40,9 @@ public class Memoire implements Serializable {
     @Column(name = "confidentiel")
     private Boolean confidentiel;
 
+    @Column(name = "data_path")
+    private String dataPath;
+
     @ManyToMany
     @JoinTable(name = "memoire_tags",
                joinColumns = @JoinColumn(name="memoires_id", referencedColumnName="id"),
@@ -114,6 +117,14 @@ public class Memoire implements Serializable {
     public Memoire tags(Set<Tag> tags) {
         this.tags = tags;
         return this;
+    }
+
+    public String getDataPath() {
+        return dataPath;
+    }
+
+    public void setDataPath(String dataPath) {
+        this.dataPath = dataPath;
     }
 
     public Memoire addTags(Tag tag) {

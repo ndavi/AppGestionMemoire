@@ -13,6 +13,9 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
+customprop:
+    savePath: /opt/memoires/files
+
 logging:
     level:
         ROOT: DEBUG

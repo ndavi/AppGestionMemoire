@@ -1,4 +1,4 @@
-package fr.sciencesu.memoire.web.rest;
+package fr.sciencesu.memoire.web.rest.jhipster;
 
 import fr.sciencesu.memoire.security.jwt.JWTConfigurer;
 import fr.sciencesu.memoire.security.jwt.TokenProvider;

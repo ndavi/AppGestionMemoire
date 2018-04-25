@@ -1,6 +1,7 @@
 package fr.sciencesu.memoire.web.rest;
 
 import fr.sciencesu.memoire.AppGestionMemoireApp;
+import fr.sciencesu.memoire.web.rest.jhipster.LogsResource;
 import fr.sciencesu.memoire.web.rest.vm.LoggerVM;
 import ch.qos.logback.classic.AsyncAppender;
 import ch.qos.logback.classic.LoggerContext;
