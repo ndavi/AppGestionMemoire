@@ -26,6 +26,6 @@ public interface MemoireMapper extends EntityMapper<MemoireDTO, Memoire> {
         return memoire;
     }
 
-    @Mapping(target = "data", ignore = true)
-    Memoire toEntity(MemoireDTO memoire);
+    @Mapping(target="data", ignore = true)
+    MemoireDTO toDto(Memoire memoire);
 }

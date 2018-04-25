@@ -65,7 +65,4 @@ public class MemoireController {
         memoiresEntity = memoireRepository.save(memoiresEntity);
         return ResponseEntity.ok().body(memoireMapper.toDto(memoiresEntity));
     }
-
-
-
 }
