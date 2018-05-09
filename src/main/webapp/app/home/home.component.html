@@ -4,13 +4,55 @@
     </div>
     <div class="col-md-9">
         <h1 class="display-4">Gestion de mémoire</h1>
-        <p class="lead">Page d'accueil</p>
+        <p class="lead">Page d'upload</p>
 
         <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-success" *ngSwitchCase="true">
                 <span *ngIf="account"
-                > Authentifié en tant que "{{account.login}}". </span>
+                > Bonjour "{{account.login}}". </span>
+                <form (submit)="onUploadFilesSubmit($event)" enctype="multipart/form-data">
+                    <label for="file">Select files to upload:</label>
+                    <input type="file" name="pdf" id="file"  multiple/>
+                    <input type="submit" name="submit" value="Submit" />
+                </form>
             </div>
+            <form (submit)="onLastFormSubmit()">
+                <div *ngFor="let file of files; let i = index">
+                    <h2>Formulaire du mémoire {{file.name}}</h2>
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name"
+                           required
+                           [(ngModel)]="model[i].nom" name="name"
+                           #name="ngModel"/>
+
+                        <label for="sujet">Sujet</label>
+                        <input type="text" class="form-control" id="sujet"
+                               required
+                               [(ngModel)]="model[i].sujet" name="sujet"
+                               #name="ngModel"/>
+
+                        <label for="langue">Langue</label>
+                        <select id="langue" name="langue" [(ngModel)]="model[i].langue">
+                            <option value="FRANCAIS">Français</option>
+                            <option value="ANGLAIS">Anglais</option>
+                        </select>
+
+                    <label for="confidentiel">Confidentiel</label>
+                        <input type="checkbox" class="form-control" id="confidentiel"
+                               required
+                               [(ngModel)]="model[i].confidentiel" name="confidentiel"
+                               #name="ngModel"/>
+
+                    <div class="form-group">
+                        <label for="field_tags">Tags</label>
+                        <select class="form-control" id="field_tags" multiple name="tags" [(ngModel)]="tags">
+                            <option [ngValue]="getSelected(tags, tagOption)" *ngFor="let tagOption of tags; trackBy: trackTagById">{{tagOption.id}}</option>
+                        </select>
+                    </div>
+                        <hr/>
+                </div>
+                <input type="submit" name="Submit"/>
+            </form>
         </div>
     </div>
 </div>

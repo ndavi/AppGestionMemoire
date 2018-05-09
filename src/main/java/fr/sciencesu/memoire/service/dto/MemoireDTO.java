@@ -23,11 +23,16 @@ public class MemoireDTO implements Serializable {
     private String sujet;
 
     @NotNull
+    private String extension;
+
+    @NotNull
     private Langue langue;
 
     private Boolean confidentiel;
 
     private MultipartFile data;
+
+    private String base64Data;
 
     private String dataPath;
 
@@ -95,6 +100,26 @@ public class MemoireDTO implements Serializable {
 
     public void setData(MultipartFile data) {
         this.data = data;
+    }
+
+    public String getExtension() {
+        return extension;
+    }
+
+    public void setExtension(String extension) {
+        this.extension = extension;
+    }
+
+    public String getBase64Data() {
+        return base64Data;
+    }
+
+    public void setBase64Data(String base64Data) {
+        this.base64Data = base64Data;
+    }
+
+    public Boolean getConfidentiel() {
+        return confidentiel;
     }
 
     @Override
